@@ -17,7 +17,7 @@ To generate this analysis, the following resources were utilized;
 
   - Data Source: http://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008
 
-  - Softwares: Python, Jupyter Notebook, Pandas, SK Learning, Postgres databse using AWS RDS
+  - Softwares: Python, Jupyter Notebook, Pandas, SK-Learn, Postgres database, Quick DBD, Flask, Chartjs, Bootstrap,
 
 
 ### Description of the Source Data
@@ -37,7 +37,7 @@ With this data, we hope to answer the following questions;
 (1) The likelihood of re-admitting a patient for the same condition at a later date 
 (2) Identify key attributes (features) from the dataset that contribute significantly to the likelihood of patient re-admission 
 (3) Design & Identify the predictive model that will return the best accuracy & recall for this dataset
-(4) Generate visualizations that provide insights and trends from the data   
+(4) Generate visualizations on a dashboard that provide insights and trends from the data   
 
 
 **Work Cited:** Beata Strack, Jonathan P. DeShazo, Chris Gennings, Juan L. Olmo, Sebastian Ventura, Krzysztof J. Cios, and John N. Clore, _“Impact of HbA1c Measurement on Hospital Readmission Rates: Analysis of 70,000 Clinical Database Patient Records,”_ BioMed Research International, vol. 2014, Article ID 781670, 11 pages, 2014.
@@ -48,4 +48,23 @@ Source: http://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+yea
 
 The communication protocols adopted for this project were mainly;
 1. Slack: For communication of ideas, information and other relevant data for the project
-2. Zoom: For face-to-face meetings among project team members where issues relating to the project are deliberated and solutions identified and agreed.
+2. Zoom / Discord: For face-to-face meetings among project team members where issues relating to the project are deliberated and solutions identified and agreed.
+
+
+**Data Exploration & Engineering**
+
+The diabetes dataset used for this project had over 50 features & 101k rows of data. This dataset was subjected to various data exploration, preprocessing and engineering processes and were eventually reduced to about 29 features & 59k rows of data. These exploration & engineering steps include;
+
+1. **General Preprocessing:** This step generally involved the dropping of some initially identified unimportant features and rows from the dataset. Duplicates in the "patient_nbr" feature column were first dropped following which the "patient_nbr", "enounter_id", "weight", "payer_code" & "medical_spacialty". Following this, rows in the "gender" & "race" columns with unknown values like "?" and "unknown/invalid" were dropped. In the "discharge_disposition_id" column, rows that correspond to patients who are still in the hospital or dead / expired patients were also dropped.
+
+2. **Binning Diagnosis:** This step was dedicated to the fine-tunning of the "diag_1", "diag_2" & "diag_3" feature columns. The data in these columns were first converted from objects to floats following which the data were then binned (reassigned numbers between 1 and 17 depending on the bands the data fall into). The bands correspond to code ranges described by ICD9 (http://icd9.chrisendres.com/index.php?action=contents)
+
+3. **Track Number of Medication Changed:** This step was dedicated to the preprocessing of the 23 medication columns (from "metformin" to "metformin-pioglitazone") in the data. The aim of this step was to identify if there were changes in the medication of the patients and bin the data into either of 2 categories - 0 or 1 where 0 depicts "Steady / No" change in patients medications while 1 depicts "Changes" in patients medication". This was done in pursuit of dimensionality reduction to collapse 23 columns of data into one
+
+4. **Track Number of Visits in Previous Year:** The step was used to drop "number_emergency", "number_inpatient" and "number_outpatient" feature columns and in return added the total number of hospital visits in the previous year 
+
+5. **Encoding Some Features:** In this step, the following feature columns were encoded in readiness for the machine learning step of the projects - "gender", "age", "A1Cresult", "diabetesMed" & "max_glu_serum" columns. In addition, the target column ("readmitted") was converted to binary data (from the initial 3 unique datapoints that were present) and binned. The datapoints that represent "<30" and ">30" were binned into a single category (1) while "NO" was binned as 0.
+
+6. **Binning Admission Source & Admission Type IDs:** These steps were used to appropriately bin the "admission_source_id" & "admission_type_id" feature columns in readiness for the next step.
+
+7. **Turning Other Categorical Variables to Dummy Variables:** This was the final step of the data exploration / engineering phase where all outstanding categorical feature columns were modified using the "pd.get_dummies" method.  
