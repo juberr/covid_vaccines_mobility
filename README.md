@@ -72,4 +72,4 @@ The diabetes dataset used for this project had over 50 features & 101k rows of d
 
 Our presentation can be viewed in the following link: 
 
-![presentation](https://docs.google.com/presentation/d/1inrKjgXdDXHLZa38YI92QWBNn2D-uiTJqdJlgmVNad0/edit?usp=sharing)
+https://docs.google.com/presentation/d/1inrKjgXdDXHLZa38YI92QWBNn2D-uiTJqdJlgmVNad0/edit?usp=sharing
