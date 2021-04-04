@@ -2,7 +2,6 @@
 
 To design a suitable Machine Learning Model that can help to analyze various clinical factors in hospitalized patients with diabetes in order to predict the likelihood of re-admission of such patients for their condition at a later date.
 
-
 ### Overview of the Readmission_Diabetes_Prediction
 
 The reason / purpose of this analysis is to design a suitable Machine Learning Model that can help to analyze various clinical factors in hospitalized patients with diabetes in order to predict the likelihood of re-admission of such patients for their condition at a later date. The predictive model will leverage and analyze various input factors extracted from a 10 year (1999-2008) clinical care dataset from 130 hospitals & integrated delivery networks.
@@ -68,3 +67,9 @@ The diabetes dataset used for this project had over 50 features & 101k rows of d
 6. **Binning Admission Source & Admission Type IDs:** These steps were used to appropriately bin the "admission_source_id" & "admission_type_id" feature columns in readiness for the next step.
 
 7. **Turning Other Categorical Variables to Dummy Variables:** This was the final step of the data exploration / engineering phase where all outstanding categorical feature columns were modified using the "pd.get_dummies" method.  
+
+### Presentation 
+
+Our presentation can be viewed in the following link: 
+
+![presentation](https://docs.google.com/presentation/d/1inrKjgXdDXHLZa38YI92QWBNn2D-uiTJqdJlgmVNad0/edit?usp=sharing)
