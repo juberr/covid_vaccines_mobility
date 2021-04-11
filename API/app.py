@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify, make_response, render_template
 from flask_cors import CORS, cross_origin
 import pandas as pd 
 from joblib import dump, load
@@ -25,6 +25,10 @@ def hello():
     print(f'result: {readm}')
 
     return jsonify(results=readm)
+
+@app.route('/')
+def home():
+    return render_template('charts.html')
 
 
 if __name__ == '__main__':
