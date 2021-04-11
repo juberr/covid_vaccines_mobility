@@ -104,10 +104,6 @@ seaborn==0.11.0
 Send2Trash==1.5.0
 six==1.15.0
 sqlparse==0.4.1
-tensorboard==2.3.0
-tensorboard-plugin-wit==1.7.0
-tensorflow==2.3.1
-tensorflow-estimator==2.3.0
 termcolor==1.1.0
 terminado==0.9.1
 testpath==0.4.4
@@ -117,9 +113,4 @@ tornado==6.0.4
 traitlets==5.0.4
 urllib3==1.25.10
 virtualenv==20.3.0
-wcwidth==0.2.5
-webencodings==0.5.1
-Werkzeug==1.0.1
-widgetsnbextension==3.5.1
-wrapt==1.12.1
-xlrd==1.2.0
+
