@@ -1,0 +1,146 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Diabetes Readmission Prediction Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Diabetes Readmission Prediction Dashboard</h1>
+      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center"><h4>Input the fields below to predict the likelyhood of readmission</h4></div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Patient Features</h5>
+          <form>
+            <div class="form-group">
+              <label for="numlab">Number of Lab Procedures</label>
+              <input type="numlab" class="form-control" id="numlab" placeholder="3">
+              <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="medications">Number of Medications</label>
+              <input type="medications" class="form-control" id="med" placeholder="4">
+            </div>
+            <div class="form-group">
+                <label for="dayshosp">Time in Hospital (days)</label>
+                <input type="dayshosp" class="form-control" id="dayshosp" placeholder="2">
+              </div>
+        
+          </form>
+
+          <label for="diag1">Primary Diagnosis: </label>
+            <select name="diag1" id="diag1" class="form-control">
+              <option value="1">Infectious and Parasitic Diseases</option>
+              <option value="2">Neoplasms</option>
+              <option value="3">Endocrine, Nutritional, Metabolic & Immunity Disorders</option>
+              <option value="4">Diseases of the Blood and Blood-Forming Organisms</option>
+              <option value="5">Mental Disorder</option>
+              <option value="6">Diseases of the Nervous System and Sense Organs</option>
+              <option value="7">Diseases of the Circulatory System</option>
+              <option value="8">Diseases of the Respiratory System</option>
+              <option value="9">Diseases of the Digestive System</option>
+              <option value="10">Diseases of the Genitourinary System</option>
+              <option value="11">Complications of Pregnancy, Childbirth, and the Puerperium</option>
+              <option value="12">Diseases of the Skin and Subcutaneuous Tissue</option>
+              <option value="13">Diseases of the Muscuskeletal System and Connective tissue</option>
+              <option value="14">Congenital Anomalies</option>
+              <option value="15">Certain Conditions Originating in the Perinatal Period</option>
+              <option value="16">Symptoms, Signs and Ill-Defined Conditions</option>
+              <option value="17">Injury and Poisoning</option>
+            </select>
+
+            <label for="diag2">Secondary Diagnosis: </label>
+            <select name="diag1" id="diag2" class="form-control">
+              <option value="1">Infectious and Parasitic Diseases</option>
+              <option value="2">Neoplasms</option>
+              <option value="3">Endocrine, Nutritional, Metabolic & Immunity Disorders</option>
+              <option value="4">Diseases of the Blood and Blood-Forming Organisms</option>
+              <option value="5">Mental Disorder</option>
+              <option value="6">Diseases of the Nervous System and Sense Organs</option>
+              <option value="7">Diseases of the Circulatory System</option>
+              <option value="8">Diseases of the Respiratory System</option>
+              <option value="9">Diseases of the Digestive System</option>
+              <option value="10">Diseases of the Genitourinary System</option>
+              <option value="11">Complications of Pregnancy, Childbirth, and the Puerperium</option>
+              <option value="12">Diseases of the Skin and Subcutaneuous Tissue</option>
+              <option value="13">Diseases of the Muscuskeletal System and Connective tissue</option>
+              <option value="14">Congenital Anomalies</option>
+              <option value="15">Certain Conditions Originating in the Perinatal Period</option>
+              <option value="16">Symptoms, Signs and Ill-Defined Conditions</option>
+              <option value="17">Injury and Poisoning</option>
+            </select>
+
+            <label for="diag3">Tertiary Diagnosis: </label>
+            <select name="diag1" id="diag3" class="form-control">
+              <option value="1">Infectious and Parasitic Diseases</option>
+              <option value="2">Neoplasms</option>
+              <option value="3">Endocrine, Nutritional, Metabolic & Immunity Disorders</option>
+              <option value="4">Diseases of the Blood and Blood-Forming Organisms</option>
+              <option value="5">Mental Disorder</option>
+              <option value="6">Diseases of the Nervous System and Sense Organs</option>
+              <option value="7">Diseases of the Circulatory System</option>
+              <option value="8">Diseases of the Respiratory System</option>
+              <option value="9">Diseases of the Digestive System</option>
+              <option value="10">Diseases of the Genitourinary System</option>
+              <option value="11">Complications of Pregnancy, Childbirth, and the Puerperium</option>
+              <option value="12">Diseases of the Skin and Subcutaneuous Tissue</option>
+              <option value="13">Diseases of the Muscuskeletal System and Connective tissue</option>
+              <option value="14">Congenital Anomalies</option>
+              <option value="15">Certain Conditions Originating in the Perinatal Period</option>
+              <option value="16">Symptoms, Signs and Ill-Defined Conditions</option>
+              <option value="17">Injury and Poisoning</option>
+            </select>
+            <h5></h5>
+            <button type="submit" class="btn btn-primary" onclick="predict()">Submit</button>
+          
+        </div>
+
+      </div>
+     
+      <div class="col-md-10">
+        <div id='resultChart'></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="myChart3"></div>
+    <div class='row'>
+        <div class="col-md-6">
+            <div id="myChart1"></div>
+          </div>
+          <div class="col-md-6">
+            <div id="myChart2"></div>
+          </div>
+    </div>
+      </div>
+    </div>
+
+  </div>
+​
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="data/df_json.js"></script>
+  <script src='data/features.js'></script>
+  <script src='data/highestreadm.js'></script>
+  <script src="charts.js"></script>
+​
+</body>
+​
+</html>

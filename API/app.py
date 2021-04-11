@@ -24,7 +24,7 @@ def hello():
 
     print(f'result: {readm}')
 
-    return str(readm)
+    return jsonify(results=readm)
 
 
 if __name__ == '__main__':

@@ -2,9 +2,8 @@ from joblib import dump, load
 import pandas as pd
 import json
 
-scaler = load('model_resources/scaler.joblib')
-
-model = load('model_resources/rfc.joblib')
+scaler = load('../dist/6rf_scaler.joblib')
+model = load('../dist/6rf_model.joblib')
 
 def create_input_data(data):
     
@@ -17,7 +16,7 @@ def predict_readmission(data):
     
     scaled_data = scaler.transform(data.reshape(1,-1))
     
-    return model.predict(scaled_data)[0]
+    return tuple(model.predict_proba(scaled_data)[0])
 
 def clean_json(json_data):
             
@@ -26,3 +25,4 @@ def clean_json(json_data):
         
         
     return json.dumps(json_data)
+
