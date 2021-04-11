@@ -43,11 +43,6 @@ With this data, we hope to answer the following questions;
 Source: http://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008
 
 
-### Communication Protocol
-
-The communication protocols adopted for this project were mainly;
-1. Slack: For communication of ideas, information and other relevant data for the project
-2. Zoom / Discord: For face-to-face meetings among project team members where issues relating to the project are deliberated and solutions identified and agreed.
 
 
 **Data Exploration & Engineering**
