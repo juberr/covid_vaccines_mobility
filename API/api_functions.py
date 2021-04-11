@@ -2,8 +2,8 @@ from joblib import dump, load
 import pandas as pd
 import json
 
-scaler = load('../dist/6rf_scaler.joblib')
-model = load('../dist/6rf_model.joblib')
+scaler = load('../static/6rf_scaler.joblib')
+model = load('../static/6rf_model.joblib')
 
 def create_input_data(data):
     
