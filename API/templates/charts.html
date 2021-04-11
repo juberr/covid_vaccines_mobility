@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Diabetes Readmission Prediction Dashboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/charts.css') }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -20,6 +21,9 @@
         <h1>Diabetes Readmission Prediction Dashboard</h1>
       
       </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center"> <p>Diabetes is a medical condition that affects approximately 1 in 10 patients in the United States. In the pursuit of ensuring proper patient care is given, this dashboard presents a sample Machine Learning Algorithm that can predict if a patient will be readmitted to the hospital within a year of their stay. Emergency readmission to hospital is frequently used as a measure of the quality of a hospital because a high proportion of readmissions should be preventable if the preceding care is adequate.</p></div>
     </div>
     <div class="row">
       <div class="col-md-12 text-center"><h4>Input the fields below to predict the likelyhood of readmission</h4></div>
@@ -129,6 +133,14 @@
             <div id="myChart2"></div>
           </div>
     </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p><b>Readmission Prediction Piechart - </b> This chart displays the percentage likelihood a given patient will be readmitted to the hospital within a year. </p> <br>
+        <p><b>Diagnositc Group Readmission Percentage - </b> This chart displays the distribution of readmission by diagnostic group among our dataset. You can hover over the bubbles to see which diagnostic group they belong to.</p><br>
+        <p><b> Age Distribution Histogram - </b> This chart demonstrates age distribution of diabetic patients in the dataset by increasing age groups.</p> <br>
+        <p><b> Feature Importance Histogram - </b> <p> The top six feature importances of our predictive model from our model selection phase. Our full model predicts on 20 total features. </p> <br>
       </div>
     </div>
 

@@ -167,7 +167,7 @@ function predict() {
     }
 
     // declare endpoint
-    let url = 'https://diabetes-readm-predict.herokuapp/predict'
+    let url = 'http://localhost:2456/predict'
 
     // create api params
     let params = {
