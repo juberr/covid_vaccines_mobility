@@ -73,6 +73,8 @@ https://docs.google.com/presentation/d/1inrKjgXdDXHLZa38YI92QWBNn2D-uiTJqdJlgmVN
 
 Our dashboard presents 4 key visualizations from our machine learning model and exploratory data analysis.
 
+[LIVE VERSION](http://diabetespredictiondashboard-env.eba-ycspkapq.ca-central-1.elasticbeanstalk.com/)
+
 ![interactive](https://github.com/juberr/readmission_diabetes_prediction/blob/develop/pics/inter.png?raw=true)
 
 Our interactive element takes in patient feature data from the user and returns the percentage chance of that patient being readmitted.
