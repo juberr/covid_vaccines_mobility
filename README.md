@@ -68,3 +68,22 @@ The diabetes dataset used for this project had over 50 features & 101k rows of d
 Our presentation can be viewed in the following link: 
 
 https://docs.google.com/presentation/d/1inrKjgXdDXHLZa38YI92QWBNn2D-uiTJqdJlgmVNad0/edit?usp=sharing
+
+
+### Dashboard
+
+Our dashboard presents 4 key visualizations from our machine learning model and exploratory data analysis.
+
+[INSERT IMAGE HERE]
+
+Our interactive element takes in patient feature data from the user and returns the percentage chance of that patient being readmitted.
+
+[INSERT IMAGE HERE]
+
+The bubble chart demonstrates each diagnostic groups's readmission rate in percentage. Understanding the rate at which diagnostic groups are readmitted can help doctors know which groups are of pressing concern.
+
+[INSERT IMAGE HERE]
+
+An age distribution chart shows the skwew in our data's population towards older age groups. This is important in understanding the limitations/biases in our dataset
+
+The feature importance chart lists the top six features our model evaluates in ascending order. These are the six features our sample model evaluates on the dashboard.
