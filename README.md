@@ -69,7 +69,6 @@ Our presentation can be viewed in the following link:
 
 https://docs.google.com/presentation/d/1inrKjgXdDXHLZa38YI92QWBNn2D-uiTJqdJlgmVNad0/edit?usp=sharing
 
-
 ### Dashboard
 
 Our dashboard presents 4 key visualizations from our machine learning model and exploratory data analysis.
