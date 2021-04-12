@@ -74,15 +74,15 @@ https://docs.google.com/presentation/d/1inrKjgXdDXHLZa38YI92QWBNn2D-uiTJqdJlgmVN
 
 Our dashboard presents 4 key visualizations from our machine learning model and exploratory data analysis.
 
-[INSERT IMAGE HERE]
+![interactive](https://github.com/juberr/readmission_diabetes_prediction/blob/develop/pics/inter.png?raw=true)
 
 Our interactive element takes in patient feature data from the user and returns the percentage chance of that patient being readmitted.
 
-[INSERT IMAGE HERE]
+![bubble](https://github.com/juberr/readmission_diabetes_prediction/blob/develop/pics/bubble.png?raw=true)
 
 The bubble chart demonstrates each diagnostic groups's readmission rate in percentage. Understanding the rate at which diagnostic groups are readmitted can help doctors know which groups are of pressing concern.
 
-[INSERT IMAGE HERE]
+![agefeat](https://github.com/juberr/readmission_diabetes_prediction/blob/develop/pics/age%20and%20feature.png?raw=true)
 
 An age distribution chart shows the skwew in our data's population towards older age groups. This is important in understanding the limitations/biases in our dataset
 
