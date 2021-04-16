@@ -18,7 +18,6 @@ To generate this analysis, the following resources were utilized;
 
   - Softwares: Python, Jupyter Notebook, Pandas, SK-Learn, Postgres database, Quick DBD, Flask, Chartjs, Bootstrap,
 
-
 ### Description of the Source Data
 
 The dataset represents 10 years (1999-2008) of clinical care at 130 US hospitals and integrated delivery networks. It includes over 50 features representing patient and hospital outcomes. 
@@ -38,12 +37,8 @@ With this data, we hope to answer the following questions;
 (3) Design & Identify the predictive model that will return the best accuracy & recall for this dataset
 (4) Generate visualizations on a dashboard that provide insights and trends from the data   
 
-
 **Work Cited:** Beata Strack, Jonathan P. DeShazo, Chris Gennings, Juan L. Olmo, Sebastian Ventura, Krzysztof J. Cios, and John N. Clore, _“Impact of HbA1c Measurement on Hospital Readmission Rates: Analysis of 70,000 Clinical Database Patient Records,”_ BioMed Research International, vol. 2014, Article ID 781670, 11 pages, 2014.
 Source: http://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008
-
-
-
 
 **Data Exploration & Engineering**
 
@@ -88,3 +83,4 @@ The bubble chart demonstrates each diagnostic groups's readmission rate in perce
 An age distribution chart shows the skwew in our data's population towards older age groups. This is important in understanding the limitations/biases in our dataset
 
 The feature importance chart lists the top six features our model evaluates in ascending order. These are the six features our sample model evaluates on the dashboard.
+
