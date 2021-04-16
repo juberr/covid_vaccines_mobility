@@ -1,1 +1,3 @@
 model_resources/
+.ipynb_checkpoints/
+__pycache__
