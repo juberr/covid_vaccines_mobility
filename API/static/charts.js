@@ -122,8 +122,9 @@ function createPieChart() {
 
     let pieData = [{
         values: [1,0],
-        labels: ['% Likelyhood Not Readmitted', '% Likelyhood Readmitted'],
-        type: 'pie'
+        labels: ['% Likelihood Not Readmitted', '% Likelihood Readmitted'],
+        type: 'pie',
+        marker: {colors: ['rgb(56,75,126)', 'rgb(255,99,71)']}
     }]
 
     let layout = {
@@ -136,23 +137,22 @@ function createPieChart() {
 };
 
 function updateChart(ctx, updateData) {
-    let newTitle = ''
-    if (updateData[0] > updateData[1]) {
-        newTitle = 'This patient will likely not be readmitted'
-    }
+    // let newTitle = ''
+    // if (updateData[0] > updateData[1]) {
+    //     newTitle = 'This patient will likely not be readmitted'
+    // }
 
-    else {
-        newTitle = 'This patient will likely be readmitted'
-    };
+    // else {
+    //     newTitle = 'This patient will likely be readmitted'
+    // };
 
     let update = {
-        title: newTitle,
+        //title: newTitle,
         values: [updateData],
+        marker: {colors: ['rgb(56,75,126)', 'rgb(255,99,71)']}
 
     }
-    Plotly.restyle(ctx, update)
-
-    console.log(title);
+    Plotly.restyle(ctx, update);
 }
 
 function predict() {
@@ -167,7 +167,7 @@ function predict() {
     }
 
     // declare endpoint
-    let url = 'http://localhost:2456/predict'
+    let url = 'http://diabetespredictiondashboard-env.eba-ycspkapq.ca-central-1.elasticbeanstalk.com/predict'
 
     // create api params
     let params = {
@@ -179,7 +179,7 @@ function predict() {
     let ctx = document.getElementById('resultChart')
 
     // get prediction and update section
-    d3.text(url, params).then(resp => JSON.parse(resp)).then(json => updateChart(ctx, json.results))
+    d3.text(url, params).then(resp => JSON.parse(resp)).then(json => updateChart(ctx, json.result))
 
     
 
